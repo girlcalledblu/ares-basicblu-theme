@@ -1094,35 +1094,6 @@ table.char-ability-list {
 	color: $text-color;
 }
 
-d + .btn,
-:not(.btn-check) + .btn:active,
-.btn:first-child:active,
-.btn.active,
-.btn.show {
-	background-color: $background-color;
-	border-color: transparent;
-}
-
-.btn-collapse {
-	width: 100%;
-	border-radius: 0;
-	background-color: $primary-color;
-	border-color: transparent;
-	text-align: left;
-}
-
-.btn-collapse:hover {
-	background-color: $primary-color;
-	text-color: $secondary-color;
-	border-color: $border-color;
-}
-
-.collapse.show {
-background-color: $primary-color;
-	margin-top: -10px;
-	padding: 0px 5px 10px;
-}
-
 .btn-default:active,
 .btn-default:focus,
 .btn-default:hover,
