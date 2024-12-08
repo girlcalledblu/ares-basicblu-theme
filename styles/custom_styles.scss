@@ -980,7 +980,6 @@ table.char-ability-list {
 
 .play-sidebar::-webkit-scrollbar,
 .scene-card .tab-content::-webkit-scrollbar,
-.mapbox .tab-content::-webkit-scrollbar,
 .modal-body::-webkit-scrollbar {
 	width: 10px;
 	background-color: transparent
@@ -988,7 +987,6 @@ table.char-ability-list {
 
 .play-sidebar::-webkit-scrollbar-thumb,
 .scene-card .tab-content::-webkit-scrollbar-thumb,
-.mapbox .tab-content::-webkit-scrollbar-thumb,
 .modal-body::-webkit-scrollbar-thumb {
 	background-clip: content-box;
 	border: 3px solid transparent;
@@ -999,7 +997,6 @@ table.char-ability-list {
 
 .play-sidebar::-webkit-scrollbar-button,
 .scene-card .tab-content::-webkit-scrollbar-button,
-.mapbox .tab-content::-webkit-scrollbar-button,
 .modal-body::-webkit-scrollbar-button {
 	width: 0;
 	height: 0;
@@ -1008,7 +1005,6 @@ table.char-ability-list {
 
 .play-sidebar::-webkit-scrollbar-corner,
 .scene-card .tab-content::-webkit-scrollbar-corner,
-.mapbox .tab-content::-webkit-scrollbar-corner,
 .modal-body::-webkit-scrollbar-corner {
 	background-color: transparent
 }
