@@ -12,7 +12,8 @@ This theme package has some unique features!
 
 * If you use FS3, the Attribute, Skill, and Advantage dots on both the character sheet and character scene card will match the color scheme in the client;
 * Job categories have been colored in rainbow order;
-* Mobile response has been added and updated in a variety of elements.
+* Mobile response has been added and updated in a variety of elements;
+* Calendar will utilize your theme colors.
 
 ## Warning!
 The images you see in the home screenshot are not part of this theme package!
