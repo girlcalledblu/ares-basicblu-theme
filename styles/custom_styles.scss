@@ -513,10 +513,20 @@ h6, .h6 {
 	color: $text-color;
 }
 
-.profile-gallery img {
+// GALLERIES (Character and Thumbnail)
+
+.profile-gallery img,
+.thumbnail-gallery-item {
 	padding: 2px;
 	width: unset;
 	height: 200px;
+}
+
+.thumbnail {
+	width: unset;
+	height: 200px;
+	max-width: unset;
+	max-height: unset;
 }
 
 // PLAY SCREEN
