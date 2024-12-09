@@ -330,12 +330,8 @@ span.flatpickr-weekday,
 	text-transform: uppercase;
 }
 
-footer {
-}
-
-.body-wrap+hr:last-of-type {
+.body-container > hr:last-of-type {
 	display: none;
-	/* this removes the horizontal rule between the body and the footer */
 }
 
 .user-bar {
