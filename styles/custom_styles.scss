@@ -457,6 +457,11 @@ h6, .h6 {
 
 .profile-box {
 	background-color: $background-color;
+	border-radius: 4px;
+}
+
+.profile-image {
+	width: 375px;
 }
 
 /* Other */
