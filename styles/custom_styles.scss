@@ -752,6 +752,15 @@ h6, .h6 {
 	text-transform: uppercase;
 }
 
+.content-warning-label {
+	background-color: $muted-orange;
+}
+
+.badge-likes {
+	background-color: $muted-red;
+	box-shadow: none;
+}
+
 // TABLES
 
 .table {
