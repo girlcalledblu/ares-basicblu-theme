@@ -518,6 +518,7 @@ h6, .h6 {
 .profile-gallery img,
 .thumbnail-gallery-item {
 	padding: 2px;
+	margin-bottom: 2px;
 	width: unset;
 	height: 200px;
 }
@@ -528,6 +529,15 @@ h6, .h6 {
 	max-width: unset;
 	max-height: unset;
 }
+
+/* If you would like to center your images, just remove this line and,
+
+.profile-gallery,
+.thumbnail-gallery {
+	justify-content: center;
+}
+
+this line, too. */
 
 // PLAY SCREEN
 
