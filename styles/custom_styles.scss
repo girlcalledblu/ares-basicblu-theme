@@ -389,11 +389,9 @@ h6, .h6 {
 .toc {
 	background-color: $primary-color;
 	width: 350px;
-	max-width: 100%;
 	border: 0;
 	box-shadow: none;
-	padding: 15px;
-	margin: 15px 15px 15px 0px;
+	margin: 15px 0px;
 	border-radius: 0px;
 	float: right;
 }
@@ -405,6 +403,12 @@ h6, .h6 {
 .toc h4 {
 	font-family: $primary-font;
 	font-size: 2em;
+}
+
+@media screen and (max-width: 600px) {
+	.toc {
+		width: 100%;
+	}
 }
 
 // NAV BAR
