@@ -17,3 +17,6 @@ This theme package has some unique features!
 
 ## Warning!
 The images you see in the home screenshot are not part of this theme package!
+
+## Update Log
+19 Apr 2025 - added styling to colors.scss to support Ares 2.0 update
