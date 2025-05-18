@@ -1073,7 +1073,7 @@ tr {
 // CARD AND MODAL
 
 .scene-card .tab-content {
-	max-height: 36vh;
+	max-height: 26vh;
 	overflow-y: scroll;
 }
 
@@ -1106,12 +1106,23 @@ tr {
 	font-size: 0.95em;
 }
 
+.scene-card-demo hr {
+	display: none;
+}
+
 .scene-card-demo > .profile-item-list {
 	padding: 0;
+	border: 1px solid $almost-black;
 }
 
 .scene-card-demo > .profile-demographics > .profile-item:first-of-type {
 	padding: 15px 20px;
+}
+
+.scene-card-demo > .profile-demographics > .profile-item {
+	margin: 1px;
+	padding-bottom: 3px;
+	padding-top: 3px;
 }
 
 .scene-card-profile .char-icon-container {
