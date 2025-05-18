@@ -1073,7 +1073,7 @@ tr {
 // CARD AND MODAL
 
 .scene-card .tab-content {
-	max-height: 26vh;
+	max-height: 27vh;
 	overflow-y: scroll;
 }
 
@@ -1106,9 +1106,12 @@ tr {
 	font-size: 0.95em;
 }
 
-.scene-card-demo hr {
-	display: none;
+.scene-card-top {
+	padding-bottom: 20px;
 }
+
+.scene-card > hr {
+	display: none;
 
 .scene-card-demo > .profile-item-list {
 	padding: 0;
