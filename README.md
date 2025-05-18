@@ -14,9 +14,11 @@ This theme package has some unique features!
 * Job categories have been colored in rainbow order;
 * Mobile response has been added and updated in a variety of elements;
 * Calendar will utilize your theme colors.
+* ProseMirror input styled to fit BasicBlu theme.
 
 ## Warning!
 The images you see in the home screenshot are not part of this theme package!
 
 ## Update Log
 19 Apr 2025 - added styling to colors.scss to support Ares 2.0 update
+18 May 2025 - major overhaul to match compatibility with Ares 2.0
