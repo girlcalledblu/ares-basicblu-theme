@@ -273,18 +273,13 @@ select {
 	color: $text-color;
 }
 
-.ember-power-select-option[aria-current=true] {
+.ember-power-select-option[aria-current="true"] {
 	background-color: $secondary-color;
-	color: $almost-black
+	color: $secondary-words-color;
 }
 
 .ember-basic-dropdown-content {
 	background-color: $dark-grey
-}
-
-.ember-power-select-option[aria-selected=true] {
-	background-color: $secondary-color;
-	color: $almost-black
 }
 
 .ember-basic-dropdown-trigger,
@@ -442,11 +437,17 @@ span.flatpickr-weekday,
 
 // FRONT PAGE
 
+@media screen and (max-width: 600px) {
+.jumbotron img {
+display: none;
+}
+}
+
 // HEADING (h1, h2, etc)
 
 h1, .h1 {
 	padding: 0.2em 1.2em 0.1em;
-	color: #ebebeb;
+	color: $text-color;
 	font-family: $primary-font;
 	border: 0;
 	letter-spacing: 0.1em;
@@ -526,6 +527,16 @@ h6, .h6 {
 	font-size: 1.13em;
 }
 
+@media screen and (max-width: 600px) {
+	.header-wrap {
+		background-position: center bottom;
+	}
+
+	.site-banner {
+		flex-direction: column;
+	}
+}
+
 .dropdown-item:hover {
 	background-color: $secondary-color;
 	color: $almost-black;
@@ -559,6 +570,14 @@ h6, .h6 {
 	background: $primary-color;
 	font-size: 2em;
 	padding: 15px 0px 12px;
+}
+
+@media screen and (max-width: 600px) {
+
+	.sidebar {
+		min-width: unset;
+		width: 100%;
+	}
 }
 
 // CHARACTER PROFILES
@@ -696,6 +715,10 @@ h6, .h6 {
 	padding: 5px;
 }
 
+.live-scene-controls > a > i::after {
+display: none;
+}
+
 .pose-divider {
 	border: 1px dotted;
 	border-top-color: #4c5d69;
@@ -756,13 +779,40 @@ h6, .h6 {
 		position: relative!important;
 	}
 
-	.scene-log {
-		padding: 0px;
-		margin: 0px;
+	.play-main {
+		padding-left: 0px;
 	}
 
 	.play-scene-title {
-		font-size: 1.2em;
+		font-size: 1.2em!important;
+		padding-left: 5px;
+	}
+
+	.play-scene-context-prompt {
+		padding-left: 5px;
+	}
+
+	.scene-controls-right {
+		flex-flow: column;
+		flex-basis: 100%;
+	}
+
+	.scene-controls-left {
+		flex-flow: column;
+		flex-basis: 100%;
+	}
+
+	.scene-char-select {
+		width: 100%;
+		margin: 10px;
+	}
+
+}
+
+@media (max-width: 1400px) {
+	.play-screen {
+		flex-direction: column;
+		flex-wrap: nowrap;
 	}
 }
 
@@ -974,8 +1024,8 @@ tr {
 	-moz-border-radius: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
-	background: #2e3744;
-	border: 4px solid #2e3744;
+	background: $log-icon-color;
+	border: 4px solid $log-icon-color;
 }
 
 .log-participants-box .icon-gallery {
@@ -1082,6 +1132,10 @@ tr {
 }
 
 // CARD AND MODAL
+
+.modal-header .btn-close {
+	filter: invert(1);
+}
 
 .scene-card .tab-content {
 	max-height: 27vh;
