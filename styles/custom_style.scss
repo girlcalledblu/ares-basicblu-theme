@@ -80,12 +80,6 @@ input {
 	border-radius: 0
 }
 
-input:focus,
-textarea:focus,
-input[type="text"]:focus {
-	box-shadow: 0 0 1px 1px $border-color inset;
-}
-
 textarea,
 input,
 .markdown-preview,
@@ -116,6 +110,21 @@ input,
 .toastui-editor-defaultUI-toolbar button:not(:disabled):hover {
 	background-color: $background-color;
 	border-color: $border-color;
+}
+
+.toastui-editor-popup-body input[type='text'],
+.toastui-editor-popup-body input[type='text']:focus {
+	color: $text-color;
+	border-color: $almost-black!important;
+}
+
+.toastui-editor-popup-body input[type='text']:focus {
+	outline: 0;
+	border-color: $border-color;
+}
+
+.toastui-editor-popup-body label {
+	color: $text-color;
 }
 
 .toastui-editor-toolbar-icons.heading,
@@ -661,6 +670,8 @@ h6, .h6 {
 	border: 2px solid $primary-outline-color;
 	padding: 10px;
 	min-height: 50px;
+	background: $box-background-color;
+	color: $box-words-color;
 }
 
 .nav-tabs .nav-link.active {
@@ -1341,6 +1352,23 @@ tr {
 	background-color: $primary-color;
 	border-color: $primary-color;
 	color: $text-color;
+}
+
+.toastui-editor-defaultUI .toastui-editor-close-button,
+.toastui-editor-defaultUI .toastui-editor-ok-button {
+	text-transform: uppercase;
+	font-family: $primary-font;
+	font-size: 1.25em;
+	background-color: $secondary-color;
+	border-color: $secondary-color;
+	color: $secondary-words-color;
+}
+
+.toastui-editor-defaultUI .toastui-editor-close-button:hover,
+.toastui-editor-defaultUI .toastui-editor-ok-button:hover {
+	color: $text-color;
+	background-color: $primary-color;
+	border-color: $primary-color;
 }
 
 .btn-default:active,
