@@ -94,12 +94,16 @@ input,
 .ProseMirror {
 	font-size: 1em;
 	padding: 10px!important;
-	height: 100%;
+	height: 100%!important;
 }
 
 .toastui-editor-defaultUI-toolbar {
 	border-bottom: 0;
 	border-radius: 0;
+}
+
+.toastui-editor-toolbar {
+	margin-bottom: -1px;
 }
 
 .toastui-editor-defaultUI-toolbar button {
@@ -116,6 +120,15 @@ input,
 .toastui-editor-popup-body input[type='text']:focus {
 	color: $text-color;
 	border-color: $almost-black!important;
+}
+
+.toastui-editor-dropdown-toolbar {
+	background-color: $primary-color;
+	border-color: $almost-black!important;
+}
+
+.toastui-editor-toolbar-divider {
+    background-color: $secondary-color;
 }
 
 .toastui-editor-popup-body input[type='text']:focus {
@@ -179,6 +192,14 @@ input,
 	color: $text-color;
 }
 
+.toastui-editor-md-delimiter,
+.toastui-editor-md-thematic-break,
+.toastui-editor-md-link,
+.toastui-editor-md-table,
+.toastui-editor-md-block-quote {
+	color: $text-color
+}
+
 .ember-power-select-trigger:focus {
 	border-bottom: 0 !important;
 	border-top: 0 !important;
@@ -211,6 +232,11 @@ code {
 	color: $text-color;
 }
 
+.markdown-controls {
+	padding: 0px 5px;
+	margin-bottom: -1px;
+}
+
 .markdown-control-toggle.active {
 	border-radius: 5px 5px 0px 0px;
 }
@@ -219,6 +245,8 @@ code {
 	border: 0;
 	background-color: $background-color;
 	padding: 5px 10px 7px 10px;
+	border-radius: 5px 5px 0px 0px;
+	margin-left: 0px;
 }
 
 .admin-only-reply,
@@ -810,9 +838,9 @@ display: none;
 		flex-basis: 100%;
 	}
 
-	.scene-char-select {
+	.scene-char-select,
+	.scene-pose-select {
 		width: 100%;
-		margin: 10px;
 	}
 
 }
@@ -1044,6 +1072,13 @@ tr {
 
 .xp-progress-points {
 	color: $darkest-grey
+}
+
+.xp-ability {
+	border-bottom: 0;
+	border-top: 1px solid $border-color;
+	margin: 0;
+	padding: 10px 5px;
 }
 
 .fs3-divider {
