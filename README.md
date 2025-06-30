@@ -29,3 +29,4 @@ First, I recommend you change all iterations of $DARK-GREY to $LIGHTER-GREY and 
 * 19 Apr 2025 - added styling to colors.scss to support Ares 2.0 update
 * 18 May 2025 - major overhaul to match compatibility with Ares 2.0
 * 1 June 2025 - added small styling adjustments to better respond to light-colored themes
+* 29 June 2025 - significant updates to support Ares 2.4.x
