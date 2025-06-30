@@ -95,7 +95,7 @@ input,
 .toastui-editor-defaultUI .ProseMirror,
 .toastui-editor-main-container .md-mode > div {
 	background-color: $dark-grey;
-	border: 1px solid $almost-black;
+	border: 0;
 	border-radius: 0;
 	outline: 0;
 	min-height: 32px
@@ -103,6 +103,19 @@ input,
 
 .toastui-editor-mode-switch {
 	background-color: $primary-outline-color!important;
+	border-top: 4px solid $primary-color;
+}
+
+.toastui-editor-mode-switch .tab-item.active {
+	background-color: $primary-color;
+	border-color: $primary-color;
+	color: $text-color;
+}
+.toastui-editor-mode-switch .tab-item {
+	background-color: $dark-grey;
+	border-color: $dark-grey;
+	border-top: 1px solid $primary-color;
+	color: #aaaaaa;
 }
 
 .ProseMirror {
@@ -177,11 +190,6 @@ input,
 	border-color: transparent;
 }
 
-.toastui-editor-mode-switch {
-	background-color: $background-color;
-	border-color: transparent;
-}
-
 .toastui-editor-popup-body,
 .toastui-editor-popup-add-table .toastui-editor-table-cell,
 .toastui-editor-popup-add-table .toastui-editor-table-cell.header,
@@ -192,19 +200,7 @@ input,
 	border-color: $dark-grey;
 }
 
-.toastui-editor-mode-switch .tab-item,
-.toastui-editor-mode-switch .tab-item.active {
-	background-color: $primary-color;
-	border-color: $primary-color;
-}
 
-.toastui-editor-mode-switch .tab-item {
-	color: #aaaaaa;
-}
-
-.toastui-editor-mode-switch .tab-item.active {
-	color: $text-color;
-}
 
 .toastui-editor-md-delimiter,
 .toastui-editor-md-thematic-break,
@@ -256,6 +252,7 @@ background-color: transparent;
 
 .markdown-control-toggle.active {
 	border-radius: 4px 4px 0px 0px;
+	font-weight: 700;
 }
 
 .markdown-controls {
@@ -1355,11 +1352,11 @@ tr {
 
 .char-ability-title {
 	background-color: $primary-color;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	color: $text-color;
-	font-family: $secondary-font;
+	font-family: $primary-font;
 	font-weight: 400;
-	padding: 20px;
+	padding: 15px 15px 11px;
 	margin: 0px;
 	border: 0;
 }
