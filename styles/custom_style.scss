@@ -787,7 +787,7 @@ h6, .h6 {
 	border: 2px solid $primary-outline-color;
 	padding: 10px;
 	min-height: 50px;
-	background: $box-background-color;
+	background: $background-color;
 	color: $box-words-color;
 }
 
@@ -894,6 +894,14 @@ display: none;
 	background-color: $darker-grey;
 	padding: 0.1em 0.5em 0.1em 0.1em;
 	margin-left: 0.5em;
+}
+
+.scene-pose-header .btn-link {
+	background-color: transparent;
+}
+
+.scene-pose-header .btn-link:hover {
+	color: $primary-outline-color;
 }
 
 #chat-window .scene-pose-header {
