@@ -263,6 +263,11 @@ background-color: transparent;
 	margin-bottom: -1px;
 }
 
+.markdown-controls a:hover,
+.tooltip-button:hover {
+	color: $primary-color;
+}
+
 .markdown-control-toggle {
 	border: 0;
 	background-color: $dark-grey;
