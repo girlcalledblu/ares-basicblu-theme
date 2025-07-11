@@ -764,25 +764,30 @@ h6, .h6 {
 // TABS
 
 .nav-tabs .nav-link {
-	color: #090909;
-	background-color: $primary-outline-color;
+	color: $light-grey;
 	border-radius: 0;
-	margin-right: -2px;
 	font-size: 1em;
 	font-weight: 600;
 	text-transform: uppercase;
-	border: 0;
+	border: 1px solid $primary-color;
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.nav-tabs .nav-link:first-of-type {
-	border-left: 2px solid $primary-outline-color!important;
-	border-top: 2px solid $primary-outline-color!important;
+.nav-tabs .nav-link.active {
+	border-top: 2px solid $primary-outline-color;
+	background-color: $primary-outline-color;
+	color: $text-color;
+	border: 0;
+	height: calc(100% + 2px)
 }
 
-.nav-tabs .nav-link.active {
-	border-right: 2px solid $primary-outline-color!important;
-	border-bottom: 1px solid $background-color;
+.nav-item:first-of-type .nav-link.active {
+	border-radius: 5px 0 0 0;
+}
+
+.nav-item:last-of-type .nav-link.active,
+.nav-item:last-of-type .nav-link {
+	border-radius: 0 5px 0 0;
 }
 
 .tab-content {
@@ -793,19 +798,31 @@ h6, .h6 {
 	color: $box-words-color;
 }
 
-.nav-tabs .nav-link.active {
-	background-color: $background-color;
-	color: white;
-	border: 0;
-	height: calc(100% + 2px)
-}
-
 .nav-tabs .nav-link:focus {
 	border-color: transparent;
 }
 
 .nav-tabs .nav-link:hover {
 	color: $text-color;
+	border-color: $primary-color;
+}
+
+.nav-tabs>li {
+	white-space: nowrap
+}
+
+.nav-tabs {
+	flex-flow: row;
+}
+
+.nav-tabs:not(.--jsfied) {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.nav-tabs {
+	scrollbar-width: thin;
+	scrollbar-color: $background-color $primary-outline-color
 }
 
 // GALLERIES (Character and Thumbnail)
