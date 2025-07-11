@@ -40,6 +40,24 @@ body {
 	margin-bottom: 1em;
 }
 
+.body-wrap {
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: minmax(75%, 2150px) auto;
+}
+
+@media screen and (max-width: 1000px) {
+	.body-wrap {
+		grid-template-columns: 100%;
+	}
+	}
+
+@media screen and (min-width: 1470px) {
+	body {
+		font-size: 1em;
+	}
+}
+
 @media screen and (max-width: 600px) {
 	.body-wrap,
 	.body-container {
@@ -105,8 +123,12 @@ input,
 	min-height: 32px
 }
 
+.markdown-preview {
+	border-top: 8px solid $primary-color;
+}
+
 .toastui-editor-mode-switch {
-	background-color: $primary-outline-color!important;
+	background-color: transparent!important;
 	border-top: 4px solid $primary-color;
 }
 
@@ -123,7 +145,6 @@ input,
 }
 
 .ProseMirror {
-	font-size: 1em;
 	padding: 10px!important;
 	height: 100%!important;
 }
@@ -203,8 +224,6 @@ input,
 	color: $text-color;
 	border-color: $dark-grey;
 }
-
-
 
 .toastui-editor-md-delimiter,
 .toastui-editor-md-thematic-break,
@@ -329,11 +348,12 @@ background-color: transparent;
 }
 
 .form-item-label {
-	flex-basis: 20%;
+	min-width: unset;
+	flex-basis: 15%;
 }
 
 .form-item-entry {
-	flex-basis: 75%;
+	flex-basis: 85%;
 }
 
 .ember-power-select-trigger,
@@ -420,6 +440,10 @@ span.flatpickr-weekday,
 	fill: $text-color;
 }
 
+.flatpickr-months .flatpickr-month {
+	height: 50px;
+}
+
 .flatpickr-day.flatpickr-disabled,
 .flatpickr-day.flatpickr-disabled:hover,
 .flatpickr-day.prevMonthDay,
@@ -478,7 +502,7 @@ span.flatpickr-weekday,
 .header-wrap {
 	background-image: url(/game/uploads/theme_images/background-hm.png);
 	background-size: cover;
-	height: 300px
+	height: 300px;
 }
 
 .title-wrap {
@@ -486,12 +510,12 @@ span.flatpickr-weekday,
 }
 
 .site-title {
-	font-family: 'Vibur', cursive;
+	font-family: $primary-font;
 	text-transform: uppercase;
 }
 
 .site-subtitle {
-	font-family: $primary-font;
+	font-family: $secondary-font;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 }
@@ -510,14 +534,20 @@ span.flatpickr-weekday,
 	line-height: 1;
 }
 
-@media (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
 	.site-title {
 		font-size: 3em;
 		max-height: unset;
 	}
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1470px) {
+	.title-wrap {
+		height: 240px!important;
+	}
+}
+
+@media screen and (max-width: 600px) {
 	.site-title {
 		border: 0;
 		font-size: 3em;
@@ -539,6 +569,34 @@ span.flatpickr-weekday,
 	}
 }
 
+@media screen and (max-width: 1400px) {
+	.navbar-collapse {
+		background-color: rgba(0, 0, 0, 0.5)!important; 
+	}
+	.title-wrap {
+		height: 232px;
+	}
+}
+
+@media screen and (max-width: 991px) and (min-width: 601px) {
+	.title-wrap {
+		height: 244px!important;
+	}
+	.navbar-collapse {
+		background-color: $darker-grey!important; 
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.header-wrap {
+		background-position: center bottom;
+	}
+
+	.site-banner {
+		flex-direction: column;
+	}
+}
+
 // FRONT PAGE
 
 @media screen and (max-width: 600px) {
@@ -555,11 +613,16 @@ h1, .h1 {
 	font-family: $primary-font;
 	border: 0;
 	letter-spacing: 0.1em;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
 	border-top-right-radius: 0;
 	border-bottom-left-radius: 0;
 	margin-top: 10px;
+}
+
+@media (max-width: 1190px) {
+	h1 {
+        	padding-top: 0.3em!important;
+        	font-size: 1.5!important
+	}
 }
 
 h2, .h2 {
@@ -588,7 +651,7 @@ h6, .h6 {
 	width: 350px;
 	border: 0;
 	box-shadow: none;
-	margin: 15px 0px;
+	margin: 15px 0px 15px 15px;
 	border-radius: 0px;
 	float: right;
 }
@@ -630,54 +693,9 @@ h6, .h6 {
 	font-weight: 100;
 	font-size: 1.13em;
 }
-@media (max-width: 1400px) {
-	.navbar-collapse {
-		background-color: rgba(0, 0, 0, 0)!important; 
-	}
-	.title-wrap {
-		height: 232px;
-	}
-}
-
-@media (max-width: 991px) {
-	.title-wrap {
-		height: 244px;
-	}
-	.navbar-collapse {
-		background-color: $darker-grey!important; 
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.header-wrap {
-		background-position: center bottom;
-	}
-
-	.site-banner {
-		flex-direction: column;
-	}
-}
-@media screen and (max-width: 600px) {
-	.header-wrap {
-		background-position: center bottom;
-	}
-
-	.site-banner {
-		flex-direction: column;
-	}
-}
 
 .dropdown-divider {
 	background-color: $secondary-color;
-}
-
-@media (max-width: 991px) {
-	.title-wrap {
-		height: 244px;
-	}
-	.navbar-collapse {
-		background-color: $darker-grey!important; 
-	}
 }
 
 // SIDEBAR
@@ -685,10 +703,6 @@ h6, .h6 {
 .sidebar-box,
 .sidebar-box-right {
 	border: 0;
-}
-
-.sidebar-box-right {
-	padding-right: 10px;
 }
 
 .sidebar-heading h2 {
@@ -699,6 +713,7 @@ h6, .h6 {
 	background: $primary-color;
 	font-size: 2em;
 	padding: 15px 0px 12px;
+	margin-top: 11px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -722,10 +737,19 @@ h6, .h6 {
 .profile-box {
 	background-color: $background-color;
 	border-radius: 4px;
+	margin: 0 auto;
+	width: 100%
+}
+
+.profile-image-wrap {
+	flex-basis: 40%;
+	margin: 0 auto 10px auto;
 }
 
 .profile-image {
-	width: 375px;
+	width: auto;
+	min-width: 300px;
+	max-width: 450px;
 }
 
 .profile-demographics .profile-item:last-of-type {
@@ -757,24 +781,26 @@ h6, .h6 {
 .profile-divider {
 	margin-left: 10px;
 	margin-right: 10px;
+	padding: 5px;
 }
 
 /* Other */
 
 .status-message {
 	background-color: $primary-color;
+	color: $text-color;
 }
 
 // TABS
 
 .nav-tabs .nav-link {
-	color: $light-grey;
+	color: $lighter-grey;
 	border-radius: 0;
 	font-size: 1em;
-	font-weight: 600;
 	text-transform: uppercase;
 	border: 1px solid $primary-color;
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+	background-color: $box-background-color;
 }
 
 .nav-tabs .nav-link.active {
@@ -782,11 +808,17 @@ h6, .h6 {
 	background-color: $primary-outline-color;
 	color: $text-color;
 	border: 0;
-	height: calc(100% + 2px)
+	height: calc(100% + 2px);
+	font-weight: 600;
 }
 
-.nav-item:first-of-type .nav-link.active {
+.nav-item:first-of-type .nav-link.active,
+.nav-item:first-of-type .nav-link {
 	border-radius: 5px 0 0 0;
+}
+
+.nav-item:only-of-type .nav-link.active {
+	border-radius: 5px 5px 0 0!important;
 }
 
 .nav-item:last-of-type .nav-link.active,
@@ -809,6 +841,7 @@ h6, .h6 {
 .nav-tabs .nav-link:hover {
 	color: $text-color;
 	border-color: $primary-color;
+	background-color: $primary-color;
 }
 
 .nav-tabs>li {
@@ -831,6 +864,11 @@ h6, .h6 {
 
 // GALLERIES (Character and Thumbnail)
 
+.card.card-default.profile-gallery {
+	border: 1px $almost-black solid;
+	background-color: transparent;
+}
+
 .profile-gallery,
 .thumbnail-gallery {
 	justify-content: center;
@@ -849,11 +887,23 @@ h6, .h6 {
 	max-height: 200px;
 }
 
-.profile-gallery img:hover {
+.profile-gallery img:hover,
+.thumbnail-gallery-item img:hover {
 	transform: scale(2);
 }
 
 // PLAY SCREEN
+
+.play-screen {
+	display: grid;
+	grid-template-columns: 350px auto;
+}
+
+@media (max-width: 1190px) {
+	.play-screen {
+		grid-template-columns: 100%;
+	}
+}
 
 .play-title {
 	display: none;
@@ -931,6 +981,10 @@ display: none;
 	background-color: transparent;
 }
 
+#chat-window {
+	border: 0;
+}
+
 .hint.float-right,
 .hint.float-end {
 	padding-top: 0.25em;
@@ -940,6 +994,11 @@ display: none;
 
 .play-main {
 	padding-left: 20px;
+}
+
+.play-main h3 {
+	margin-top: 2px;
+	margin-bottom: 0;
 }
 
 /* Scenes */
@@ -979,13 +1038,6 @@ display: none;
 
 }
 
-@media (max-width: 1400px) {
-	.play-screen {
-		flex-direction: column;
-		flex-wrap: nowrap;
-	}
-}
-
 .play-scene-context {
 	margin-top: 0px;
 }
@@ -997,7 +1049,7 @@ display: none;
 .live-scene-controls {
 	text-align: right;
 	position: absolute;
-	right: 30px;
+	right: 10px;
 }
 
 /* Chat */
@@ -1020,9 +1072,9 @@ display: none;
 /* Active Scenes & Unshared Scenes */
 
 .play-scene-title {
-	font-size: 1.5em;
+	font-size: 2.2em;
 	color: $text-color;
-	font-family: $secondary-font;
+	font-family: $primary-font;
 	text-transform: uppercase;
 }
 
@@ -1064,7 +1116,7 @@ display: none;
 /* Side Bar */
 
 .play-sidebar {
-	background-color: $box-background-color;
+	background-color: $primary-color;
 	height: fit-content;
 }
 
@@ -1075,6 +1127,10 @@ display: none;
 	font-family: $primary-font;
 	text-transform: uppercase;
 	font-size: 1.5em;
+}
+
+.play-section-title > span > .tooltip-button:hover {
+	color: $primary-outline-color;
 }
 
 .play-section-title i {
@@ -1240,42 +1296,25 @@ tr {
 	white-space: nowrap
 }
 
-#systemfs3sheet .char-ability-list td .char-dot-fill:nth-of-type(5),
-.card-abilities:first-of-type .card-ability .char-dot-fill:nth-of-type(5) {
-	color: $muted-purple
-}
-
-#systemfs3sheet .row:first-of-type .col:first-of-type .char-ability-list td .char-dot-empty:nth-of-type(5),
-.card-abilities:first-of-type .card-ability .char-dot-empty:nth-of-type(5) {
-	visibility: hidden
-}
-
-#systemfs3sheet .char-ability-list td .char-dot-fill:first-of-type,
-#systemfs3sheet .row:first-of-type .col:last-of-type td .char-dot-fill:nth-of-type(n+1):nth-of-type(-n+2),
+.char-abilities-table:nth-of-type(2) .char-dot-fill:first-of-type,
 .card-abilities .card-ability .char-dot-fill:first-of-type,
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:first-of-type,
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(2), {
 	color: $muted-red
 }
 
-#systemfs3sheet .char-ability-list td .char-dot-fill:nth-of-type(2),
-#systemfs3sheet .row:first-of-type .col:last-of-type td .char-dot-fill:nth-of-type(n+3):nth-of-type(-n+4),
 .card-abilities .card-ability .char-dot-fill:nth-of-type(2),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(3),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(4) {
 	color: $muted-yellow
 }
 
-#systemfs3sheet .char-ability-list td .char-dot-fill:nth-of-type(3),
-#systemfs3sheet .row:first-of-type .col:last-of-type td .char-dot-fill:nth-of-type(n+5):nth-of-type(-n+6),
 .card-abilities .card-ability .char-dot-fill:nth-of-type(3),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(5),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(6) {
 	color: $muted-green
 }
 
-#systemfs3sheet .char-ability-list td .char-dot-fill:nth-of-type(4),
-#systemfs3sheet .row:first-of-type .col:last-of-type td .char-dot-fill:nth-of-type(n+7):nth-of-type(-n+8),
 .card-abilities .card-ability .char-dot-fill:nth-of-type(4),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(7),
 .card-abilities:nth-of-type(4) .card-ability .char-dot-fill:nth-of-type(8) {
@@ -1432,10 +1471,15 @@ tr {
 	background-color: transparent
 }
 
+.ProseMirror::-webkit-scrollbar {
+	background-color: transparent;
+}
+
 // CARD (GENERAL)
 
 .card {
 	border-color: transparent;
+	background: transparent;
 }
 
 // JOBS AND REQUESTS
