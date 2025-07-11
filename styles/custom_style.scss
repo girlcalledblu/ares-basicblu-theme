@@ -33,7 +33,11 @@ $almost-black: #0c0c0c;
 
 body {
 	font-family: $body-font;
-	font-size: 1em;
+}
+
+.body-container p {
+	line-height: 1.4;
+	margin-bottom: 1em;
 }
 
 @media screen and (max-width: 600px) {
