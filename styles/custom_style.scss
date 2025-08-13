@@ -99,6 +99,10 @@ input,
 	width: 100%
 }
 
+input[type="checkbox"] {
+	width: unset;
+}
+
 .toastui-editor-mode-switch .tab-item.active {
 	background-color: $box-background-color;
 	border-color: $box-background-color;
