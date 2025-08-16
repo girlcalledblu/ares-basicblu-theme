@@ -1,4 +1,4 @@
- /* BASIC BLU: v2.0 | Best Used with Ares v2.5 */
+ /* BASIC BLU: v2.0 | Best Used with Ares v2.6 */
 
 // CORE CSS (body styling, ansi recolors, etc)
 
@@ -184,11 +184,11 @@ input[type="checkbox"] {
 
 .site-subtitle {
 	font-family: $primary-font;
-	letter-spacing: .1em;
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
 }
 
-.body-container > hr:last-of-type {
+.container-fluid > hr:last-of-type {
 	display: none;
 }
 
@@ -256,10 +256,6 @@ input[type="checkbox"] {
 	.site-banner {
 		flex-direction: column;
 	}
-}
-
-hr:last-of-type {
-	display: none;
 }
 
 // FRONT PAGE
@@ -403,7 +399,6 @@ h6, .h6 {
 }
 
 @media screen and (max-width: 1400px) {
-
 	.sidebar {
 		min-width: unset;
 		width: 100%;
@@ -497,6 +492,8 @@ h6, .h6 {
 
 .relationship-name {
 	font-family: $secondary-font;
+	width: calc(100% - 50px);
+	display: inline-grid;
 }
 
 /* Other */
@@ -625,8 +622,13 @@ h6, .h6 {
 	margin-bottom: 5px;
 }
 
-.scene-controls {
-	margin-top: -10px;
+.scene-controls-right,
+.scene-controls-left {
+	padding: 0;
+}
+
+.scene-char-select .ember-basic-dropdown-trigger {
+	min-width: unset;
 }
 
 /* Poses */
@@ -729,22 +731,6 @@ h6, .h6 {
 	.play-scene-context-prompt {
 		padding-left: 5px;
 	}
-
-	.scene-controls-right {
-		flex-flow: column;
-		flex-basis: 100%;
-	}
-
-	.scene-controls-left {
-		flex-flow: column;
-		flex-basis: 100%;
-	}
-
-	.scene-char-select,
-	.scene-pose-select {
-		width: 100%;
-	}
-
 }
 
 .play-scene-context {
@@ -761,16 +747,19 @@ h6, .h6 {
 	bottom: 50%;
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 601px) {
 	.chat-controls > .btn-link > .fas {
 		visibility: visible;
-		font-size: 16px;
+		font-size: 18px;
 		margin-left: 1em;
 	}
 	.chat-controls > .btn-link {
 		visibility: hidden;
 		font-size: 0;
 		padding: 0;
+	}
+	.play-main h3 {
+		position: absolute;
 	}
 }
 
@@ -786,7 +775,9 @@ h6, .h6 {
 	flex-flow: row wrap;
 	justify-content: flex-end;
 	column-gap: 0.5em;
-	margin-bottom: 5px;
+	margin: 10px 10px 0 10px;
+	border-bottom: 1px solid $border-color;
+	padding-bottom: 20px;
 }
 
 .chat-controls>a:first-child {
@@ -889,6 +880,15 @@ h6, .h6 {
 	background-color: $background-color!important;
 }
 
+.markdown-editor.card,
+.card-body.markdown-editor {
+	margin-bottom: 0;
+}
+
+.card-body.markdown-editor > .markdown-controls + div {
+	height: 200px!important;
+}
+
 // LOGS
 
 .pose-divider {
@@ -936,6 +936,104 @@ h6, .h6 {
 .badge-likes {
 	background-color: $muted-red;
 	box-shadow: none;
+}
+
+// PLOTS
+
+.table.plots-list {
+	border: 0;
+}
+
+.plots-list .inline-block {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.table-striped.plots-list > tbody > tr:nth-of-type(even) > * {
+	background-color: $background-color;
+}
+
+.table-striped.plots-list > tbody > tr:nth-of-type(odd) > * {
+	background-color: $background-color;
+}
+
+.table-striped.plots-list > tbody > tr:nth-of-type(odd) > *,
+.table-striped.plots-list > tbody > tr:nth-of-type(even) > * {
+	padding: 5px;
+}
+
+.table-striped.plots-list > tbody > tr {
+	padding: 0;
+}
+
+.plots-list tr {
+	display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	margin-bottom: 2em;
+}
+
+.plots-list td:first-child {
+	flex-basis: 100%;
+	font-size: 1.5em;
+	font-family: $primary-font;
+	background-color: $box-background-color;
+	padding-top: 8px!important;
+}
+
+.plots-list td:first-child a::after {
+	content: "\f101";
+	display: inline-block;
+	float: right;
+	font-family: 'FontAwesome';
+	font-weight: bold;
+	font-size: 0.7em;
+	margin: 5px 3px 0 0;
+}
+
+.plots-list td {
+	border-bottom: none !important;
+	flex: 1 1 255px;
+}
+
+.plots-list td:first-of-type {
+	background-color: $box-background-color!important;
+	border-top: 2px solid $secondary-color;
+}
+
+.plots-list th:nth-of-type(3),
+.plots-list td:nth-of-type(3) {
+	flex: 0 0 250px;
+	text-align: right;
+	line-height: 29px;
+}
+
+.plots-list td:nth-of-type(3)::before {
+	content: "\f073";
+	font-weight: bold;
+	font-family: 'FontAwesome';
+	display: inline-block;
+	margin-right: 2px;
+	color: $secondary-color;
+}
+
+.plots-list td:last-child {
+	flex-basis: 100%;
+	border-bottom: 1px solid $secondary-color!important;
+	border-top: 1px inset $primary-outline-color!important;
+}
+
+.plots-list thead {
+	display: none;
+}
+
+.plots-list td:nth-of-type(2)::before {
+	content: "\f4ff";
+	font-weight: bold;
+	font-family: 'FontAwesome';
+	display: inline-block;
+	margin-right: 2px;
+	color: $secondary-color;
 }
 
 // TABLES
@@ -1270,6 +1368,159 @@ tr {
 	background-color: $secondary-color;
 	border-color: $secondary-color;
 	box-shadow: none;
+}
+
+// THEME BOX
+.box {
+	background: $background-color;
+	margin: 10px;
+	padding: 12px;
+	display: flex;
+	flex-flow: row;
+	align-items: stretch;
+	justify-content: flex-end;
+}
+
+.boxinfo-tab > div > .tab-content,
+.boxinfo-tab-sm > div > .tab-content {
+	background: $box-background-color;
+}
+
+.boxinfo-tab > div,
+.boxinfo-tab-sm > div,
+.boxinfo-tab > div > .tab-content,
+.boxinfo-tab-sm > div > .tab-content {
+	min-height: calc(100% - 15px);
+	height: calc(100% - 15px);
+}
+
+.boxinfo {
+	margin-top: 3px;
+}
+
+.boxinfo-tab {
+	flex-basis: 70%;
+	padding: 0;
+}
+
+.boxinfo-tab-sm {
+	flex-basis: 85%;
+	padding: 0;
+}
+
+.box a,
+.advantage-box a {
+	color: $muted-teal;
+}
+
+.box a:hover,
+.advantage-box a:hover {
+	color: $muted-teal;
+}
+
+.boxpic {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
+	flex-basis: 30%;
+	padding: 0 10px 0 0;
+}
+
+.boxpic-sm {
+	padding: 0 10px 0 0;
+	flex-basis: 15%;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 250px;
+	padding: 0 10px 0 0;
+}
+
+.boxpic img,
+.boxpic-sm img {
+	width: 100%;
+	border: 2px solid $border-color;
+	margin-top: 3px;
+	border-radius: 5px;
+}
+
+.boxpic p
+.boxpic-sm p {
+	margin: 0;
+	line-height: 0;
+	padding: 0
+}
+
+.boxpic .image-container
+.boxpic-sm .image-container {
+	padding: 0;
+	margin-top: -17px
+}
+
+.box-header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	border-bottom: 2px solid $text-color;
+	margin-right: 4px
+}
+
+.box-title {
+	flex-basis: 60%
+}
+
+.box-title h2,
+.box-title .h2 {
+	font-size: calc(14px + 0.4vw) !important;
+	margin-bottom: 0;
+	margin-top: 0.15em;
+	padding-top: 0;
+	line-height: 1.1
+}
+
+.box-header p {
+	margin-bottom: 5px
+}
+
+.box-type {
+	flex-basis: 40%;
+	text-align: right;
+	font-family: $secondary-font;
+	font-size: calc(14px + 0.4vw);
+}
+
+.box .tab-content {
+	box-shadow: none;
+	border: 0;
+	border-top: 1px solid $secondary-color;
+}
+
+.box .nav-tabs > li > a {
+	font-size: 1em;
+	letter-spacing: 1px;
+	font-weight: none;
+	line-height: 1;
+	padding-bottom: 0.25em
+}
+
+@media screen and (max-width: 1080px) {
+	.box {
+		flex-flow: column;
+	}
+	.boxpic, 
+	.boxpic-sm {
+		flex-basis: auto;
+		width: 100%;
+		margin-bottom: 5px;
+	}
+	.boxpic img,
+	.boxpic-sm img {
+		max-width: 400px;
+	}
+	.boxinfo-tab {
+		flex-basis: auto;
+	}
 }
 
 // GRID FLEXIBILITY
