@@ -63,28 +63,53 @@ a:focus {
 
 // GRID FLEXIBILITY
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 575.98px) {
 	.scene-card-top {
-		grid-template-columns: 100%;
+		display: block!important;
 	}
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (min-width: 991.98px) and (max-width: 1470px) {
 	.profile-wrap {
-		grid-template-columns: 100%;
+		grid-template-columns: 300px auto;
+		gap: 10px;
 	}
 }
 
-@media screen and (max-width: 1079px) {
+@media screen and (max-width: 991.98px) {
+	.profile-wrap {
+		display: block!important;
+	}
+
+	.profile-image-wrap {
+		transform: none!important;
+		margin: 20px auto!important;
+	}
+
+	.profile-box {
+		margin: 10px auto;
+	}
+}
+
+@media screen and (max-width: 991.98px) {
 	.play-screen {
-		grid-template-columns: 100%;
+		display: block!important;
+	}
+
+	.play-main h3 {
+		width: calc(100% - 170px);
 	}
 }
 
-@media screen and (max-width: 1000px) {
-	.body-wrap,
-	.fs3-sheet {
-		grid-template-columns: 100%;
+@media screen and (max-width: 1024px) {
+	.body-wrap {
+		display: block!important;
+	}
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1470px) {
+	.body-wrap {
+		grid-template-columns: minmax(70%, 2150px) auto;
 	}
 }
 
@@ -270,7 +295,7 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575.98px) {
 	.site-title {
 		border: 0;
 		font-size: 3em;
@@ -309,7 +334,7 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575.98px) {
 	.header-wrap {
 		background-position: center bottom;
 	}
@@ -334,7 +359,7 @@ input[type="checkbox"] {
 
 // FRONT PAGE
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575.98px) {
 	.jumbotron img {
 		display: none;
 	}
@@ -402,7 +427,7 @@ h6, .h6 {
 	font-size: 2em;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575.98px) {
 	.toc {
 		width: 100%;
 	}
@@ -799,7 +824,7 @@ h6, .h6 {
 
 /* Scenes */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 575.98px) {
 	.live-scene-controls {
 		position: relative!important;
 	}
@@ -968,11 +993,6 @@ h6, .h6 {
 	font-size: 0.75em;
 }
 
-[class*=hint--] {
-	position: relative;
-	display: flex;
-}
-
 .form-item-entry [class*=hint--] {
 	display: inline-block;
 }
@@ -996,10 +1016,6 @@ h6, .h6 {
 .markdown-editor.card,
 .card-body.markdown-editor {
 	margin-bottom: 0;
-}
-
-.scene-pose-box > .card-body.markdown-editor > .markdown-controls + div {
-	height: 200px!important;
 }
 
 // LOGS
@@ -1346,6 +1362,68 @@ tr {
 .combat-specials {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+}
+
+.fs3-combat-hud > .table {
+	min-width: 700px;
+}
+
+.table-responsive.fs3-combat-hud {
+	overflow-x: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: $secondary-color $box-background-color;
+}
+
+.combat-header-name {
+	min-width: 150px;
+}
+
+.combat-header-weapon {
+	min-width: 150px;
+}
+
+.combat-header-armor {
+	min-width: 150px;
+}
+
+.combat-header-action {
+	min-width: 150px;
+}
+
+.combat-header-edit {
+	min-width: 30px;
+}
+
+.combat-hud-edit {
+	text-align: center;
+}
+
+.combat-damage-0 {
+	color: $muted-green;
+}
+
+.combat-damage-1 {
+	color: $muted-yellow;
+}
+
+.combat-damage-2 {
+	color: $muted-orange;
+}
+
+.combat-damage-3,
+.combat-damage-4 {
+	color: $muted-red;
+}
+
+.combat-damage-5::before {
+	content: "\2b";
+	font-family: var(--fa-font-solid);
+	color: #c94955;
+}
+
+.combat-hud-ko {
+	color: #c94955;
+	text-weight: bold;
 }
 
 .fs3-rating-control {
