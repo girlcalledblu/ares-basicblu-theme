@@ -1,3 +1,12 @@
+// MEDIA QUERY SIZES
+
+$small: 575.98px;
+$medium: 767.98px;
+$large: 991.98px;
+$xlarge: 1199.98px;
+$xxlarge: 1399.98px;
+$xxxlarge: 1469.98px;
+
 // CORE CSS (body styling, ansi recolors, etc)
 
 .body-container p {
@@ -5,18 +14,19 @@
 }
 
 .body-wrap {
-	padding: 0 1rem;
+	padding: 0 0.5rem;
 	display: grid;
-	grid-template-columns: minmax(75%, 2150px) auto;
+	grid-template-columns: minmax(65%, 2150px) auto;
 }
 
-@media screen and (min-width: 1470px) {
-	body {
-		font-size: 1em;
+@media screen and (max-width: $xxxlarge) {
+	body,
+	.code-editor {
+		font-size: 0.9em;
 	}
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: $medium) {
 	.body-wrap,
 	.body-container {
 		padding: 0px;
@@ -63,20 +73,20 @@ a:focus {
 
 // GRID FLEXIBILITY
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.scene-card-top {
 		display: block!important;
 	}
 }
 
-@media screen and (min-width: 991.98px) and (max-width: 1470px) {
+@media screen and (min-width: $large) and (max-width: $xxxlarge) {
 	.profile-wrap {
 		grid-template-columns: 300px auto;
 		gap: 10px;
 	}
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: $large) {
 	.profile-wrap {
 		display: block!important;
 	}
@@ -91,7 +101,7 @@ a:focus {
 	}
 }
 
-@media screen and (max-width: 991.98px) {
+@media screen and (max-width: $large) {
 	.play-screen {
 		display: block!important;
 	}
@@ -101,15 +111,9 @@ a:focus {
 	}
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $large) {
 	.body-wrap {
 		display: block!important;
-	}
-}
-
-@media screen and (min-width: 1001px) and (max-width: 1470px) {
-	.body-wrap {
-		grid-template-columns: minmax(70%, 2150px) auto;
 	}
 }
 
@@ -119,7 +123,7 @@ a:focus {
 	color: $faded-text-color;
 }
 
-@media screen and (min-width: 1470px) {
+@media screen and (min-width: $xxxlarge) {
 	.code-editor {
 		font-size: 0.9em;
 	}
@@ -145,6 +149,8 @@ input,
 input[type="checkbox"] {
 	width: unset;
 }
+
+/* PROSEMIRROR */
 
 .toastui-editor-mode-switch .tab-item.active {
 	background-color: $box-background-color;
@@ -183,8 +189,6 @@ input[type="checkbox"] {
 	background-color: $primary-outline-color;
 	border-color: $primary-color;
 }
-
-// PROSEMIRROR
 
 :not(.auto-height) > .toastui-editor-defaultUI,
 :not(.auto-height) > .toastui-editor-defaultUI > .toastui-editor-main {
@@ -255,15 +259,21 @@ input[type="checkbox"] {
 	height: 236px;
 }
 
-@media screen and (min-width: 1401px) and (max-width: 1471px) {
+@media screen and (min-width: $xlarge) and (max-width: $xxxlarge) {
 	.title-wrap {
-		height: 240px;
+		height: 150px;
+	}
+	.header-wrap {
+		height: 210px;
 	}
 }
 
-@media screen and (min-width: 992px) and (max-width: 1400px) {
+@media screen and (min-width: $large) and (max-width: $xlarge) {
 	.title-wrap {
-		height: 230px;
+		height: 150px;
+	}
+	.header-wrap {
+		height: 210px;
 	}
 }
 
@@ -288,14 +298,14 @@ input[type="checkbox"] {
 	line-height: 1;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: $xxlarge) {
 	.site-title {
 		font-size: 3em;
 		max-height: unset;
 	}
 }
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.site-title {
 		border: 0;
 		font-size: 3em;
@@ -313,7 +323,7 @@ input[type="checkbox"] {
 	}
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: $large) {
 	.title-wrap {
 		height: 148px!important;
 	}
@@ -328,13 +338,13 @@ input[type="checkbox"] {
 	}
 }
 
-@media (max-width: 1400px) {
+@media (max-width: $xxlarge) {
 	.navbar-collapse {
 		background-color: inherit;
 	}
 }
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.header-wrap {
 		background-position: center bottom;
 	}
@@ -359,7 +369,7 @@ input[type="checkbox"] {
 
 // FRONT PAGE
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.jumbotron img {
 		display: none;
 	}
@@ -373,14 +383,14 @@ h1, .h1 {
 	margin-top: 10px;
 }
 
-@media (max-width: 1190px) {
+@media (max-width: $xlarge) {
 	h1, .h1 {
         	padding-top: 0.3em!important;
         	font-size: 2em!important
 	}
 }
 
-@media (max-width: 1400px) {
+@media (max-width: $xxlarge) {
 	h1, .h1 {
         	padding-top: 0.3em!important;
         	font-size: 2.5em!important
@@ -427,7 +437,7 @@ h6, .h6 {
 	font-size: 2em;
 }
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.toc {
 		width: 100%;
 	}
@@ -460,7 +470,7 @@ h6, .h6 {
 	background-color: $secondary-color;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: $large) {
 	.navbar > .container-fluid {
 		width: 100%;
 		flex-flow: column;
@@ -497,7 +507,7 @@ h6, .h6 {
 	margin-top: 10px;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: $xxlarge) {
 	.sidebar {
 		min-width: unset;
 		width: 100%;
@@ -824,7 +834,7 @@ h6, .h6 {
 
 /* Scenes */
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.live-scene-controls {
 		position: relative!important;
 	}
@@ -1203,7 +1213,7 @@ th {
 	font-size: calc(clamp(0.875rem, 0.455vw + 0.705rem, 1.25rem));
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: $medium) {
 	table {
 		display: block;
 		overflow-x: auto;
@@ -1220,12 +1230,12 @@ tr {
 
 .table-striped > tbody > tr:nth-of-type(even) > *,
 .alts-switcher > tr:nth-of-type(even) {
-	background-color: $darker-grey!important;
+	background-color: $darker-grey;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) > *,
+.table-striped > tbody> tr:nth-of-type(odd) > *,
 .alts-switcher > tr:nth-of-type(odd) {
-	background-color: $darkest-grey!important;
+	background-color: $darkest-grey;
 }
 
 .alts-switcher td {
@@ -1311,13 +1321,13 @@ tr {
 	background-color: $secondary-color;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: $xxlarge) {
 	.xp-ability {
 		min-height: 3.75em;
 	}
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: $small) {
 	.xp-ability {
 		min-height: 3.75em;
 		grid-template-rows: auto auto;
@@ -1364,74 +1374,12 @@ tr {
 	grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
 }
 
-.fs3-combat-hud > .table {
-	min-width: 700px;
-}
-
-.table-responsive.fs3-combat-hud {
-	overflow-x: scroll;
-	scrollbar-width: thin;
-	scrollbar-color: $secondary-color $box-background-color;
-}
-
-.combat-header-name {
-	min-width: 150px;
-}
-
-.combat-header-weapon {
-	min-width: 150px;
-}
-
-.combat-header-armor {
-	min-width: 150px;
-}
-
-.combat-header-action {
-	min-width: 150px;
-}
-
-.combat-header-edit {
-	min-width: 30px;
-}
-
-.combat-hud-edit {
-	text-align: center;
-}
-
-.combat-damage-0 {
-	color: $muted-green;
-}
-
-.combat-damage-1 {
-	color: $muted-yellow;
-}
-
-.combat-damage-2 {
-	color: $muted-orange;
-}
-
-.combat-damage-3,
-.combat-damage-4 {
-	color: $muted-red;
-}
-
-.combat-damage-5::before {
-	content: "\2b";
-	font-family: var(--fa-font-solid);
-	color: #c94955;
-}
-
-.combat-hud-ko {
-	color: #c94955;
-	text-weight: bold;
-}
-
 .fs3-rating-control {
 	display: flex;
 	justify-content: space-around
 }
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: $small) {
 	.fs3-ability-row {
 		display: block;
 	}
@@ -1477,6 +1425,85 @@ tr {
 	background-color: $dark-grey;
 	width: 30px;
 	height: 30px;
+}
+
+/* Combat HUD */
+
+.table-responsive.fs3-combat-hud > .table {
+	min-width: 1000px;
+}
+
+.table-responsive.fs3-combat-hud {
+	overflow-x: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: $secondary-color $box-background-color;
+}
+
+.combat-hud-team {
+	background-color: $box-background-color!important;
+}
+
+.fs3-combat-hud h3 {
+	margin-top: 20px;
+}
+
+.fs3-combat-hud h3::before {
+	font: var(--fa-font-solid);
+	content: "\f0c0";
+	margin: 0px 10px 0px 5px;
+	color: $secondary-color;
+}
+
+.combat-header-name {
+	min-width: 259px;
+}
+
+.combat-header-weapon {
+	min-width: 225px;
+}
+
+.combat-header-armor {
+	min-width: 225px;
+}
+
+.combat-header-action {
+	min-width: 200px;
+}
+
+.combat-header-edit {
+	min-width: 30px;
+}
+
+.combat-hud-edit {
+	text-align: center;
+}
+
+.combat-damage-0 {
+	color: $muted-green;
+}
+
+.combat-damage-1 {
+	color: $muted-yellow;
+}
+
+.combat-damage-2 {
+	color: $muted-orange;
+}
+
+.combat-damage-3,
+.combat-damage-4 {
+	color: $muted-red;
+}
+
+.combat-damage-5::before {
+	content: "\f055";
+	font-family: var(--fa-font-solid);
+	color: #c94955;
+}
+
+.combat-hud-ko {
+	color: #c94955;
+	text-weight: bold;
 }
 
 // CARD AND MODAL
