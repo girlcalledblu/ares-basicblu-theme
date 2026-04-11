@@ -514,6 +514,13 @@ h6, .h6 {
 	}
 }
 
+@media screen and (min-width: $large) and (max-width: $xxxlarge) {
+	.sidebar {
+		min-width: 300px;
+		width: 300px;
+	}
+}
+
 // CHARACTER PROFILES
 
 /* Profile Box */
