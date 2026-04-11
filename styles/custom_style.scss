@@ -734,6 +734,12 @@ h6, .h6 {
 	grid-template-columns: 350px auto;
 }
 
+@media screen and (max-width: $xxxlarge) {
+	.play-screen {
+		grid-template-columns: 300px auto;
+	}
+}
+
 .play-title {
 	display: none;
 }
