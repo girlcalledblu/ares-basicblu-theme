@@ -30,3 +30,4 @@ First, I recommend you change all iterations of $DARK-GREY to $LIGHTER-GREY and 
 * 29 June 2025 - significant updates to support Ares 2.4.x
 * 31 July 2025 - signiticant updates to support Ares 2.5
 * 16 August 2025 - minor updates to support Ares 2.6
+* 10 April 2026 - updated to support laptops and monitors 13 inches or smaller, including general responsiveness updates.
